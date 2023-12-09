@@ -39,6 +39,9 @@ def createGUI():
     addCustomerButton = gui.Button(source, text="Add Customer", command=openAddCustomerPrompt)
     addCustomerButton.pack()
 
+    removeCustomerButton = gui.Button(source, text="Remove Customer", command=openRemoveCustomerPrompt)
+    removeCustomerButton.pack()
+
     source.mainloop()
 
 def openAddCustomerPrompt():
@@ -54,13 +57,9 @@ def openAddCustomerPrompt():
         cAD = CustomerAdrBox.get()
 
         try:
-            print("A")
             outp = execute(f"insert into customer values('{cID}','{cFN}','{cLN}','{cAD}');")
-            print("B")
             print(outp)
-            print("C")
             addCustomerPromptWindow.destroy()
-            print("D")
             
         except Exception as e:
             
@@ -83,6 +82,30 @@ def openAddCustomerPrompt():
     CustomerAdrBox.pack()
     CustomerSubmit.pack()
 
+def openRemoveCustomerPrompt():
+    
+    removeCustomerPromptWindow = gui.Toplevel()
+    removeCustomerPromptWindow.title("Remove Customer")
+    removeCustomerPromptWindow.geometry("300x150")
 
+    def submitCustomerRemoval():
+        cID = CustomerIDBox.get()
+
+        try:
+            outp = execute(f"delete from customer where c_id={cID};")
+            print(outp)
+            removeCustomerPromptWindow.destroy()
+            
+        except Exception as e:
+            
+            print(e)
+
+    CustomerIDBox = gui.Entry(removeCustomerPromptWindow)
+    CustomerSubmit = gui.Button(removeCustomerPromptWindow, text="Submit", command=submitCustomerRemoval)
+
+    CustomerIDBox.insert(0, "Enter ID")
+
+    CustomerIDBox.pack()    
+    CustomerSubmit.pack()
 
 createGUI()
