@@ -1,4 +1,5 @@
-import psycopg2
+import psycopg2 #you may need to 
+                #pip install psycopg2 \
 
 # Replace these with your PostgreSQL connection details
 host = '*****'  # Replace with your PostgreSQL server hostname or IP address
