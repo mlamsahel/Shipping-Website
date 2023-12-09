@@ -1,11 +1,11 @@
-import psycopg2 #you may need to 
-                #pip install psycopg2 \
+from gui import *
+import psycopg2
 
 # Replace these with your PostgreSQL connection details
-host = '*****'  # Replace with your PostgreSQL server hostname or IP address
+host = '192.168.1.42'  # Replace with your PostgreSQL server hostname or IP address
 database_name = 'postgres'  # Replace with your database name
 user = 'postgres'  # Replace with your PostgreSQL username
-password = '*****'  # Replace with your PostgreSQL password
+password = '06896#Qz1'  # Replace with your PostgreSQL password
 
 
 database = psycopg2.connect(
@@ -15,17 +15,14 @@ database = psycopg2.connect(
     host=host
 )
 
-class main:
-
-    def execute(input): #simplifying the cursor.exeucte command into a simple method that creates the cursor, executes, and pushes
+def execute(input): #simplifying the cursor.exeucte command into a simple method that creates the cursor, executes, and pushes
     
-        cursor = database.cursor()
-        cursor.execute(input)
-        outp = cursor.fetchall()
-        database.commit()
-        return outp
+    cursor = database.cursor()
+    cursor.execute(input)
+    outp = cursor.fetchall()
+    database.commit()
+    return outp
 
-    output = execute("select * from customer;")
-    print(output)
+createGUI()
 
 database.close()
