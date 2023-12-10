@@ -4,10 +4,10 @@ import tkinter as gui
 
 
 # Replace these with your PostgreSQL connection details
-host = '192.168.1.42'  # Replace with your PostgreSQL server hostname or IP address
+host = '****'  # Replace with your PostgreSQL server hostname or IP address
 database_name = 'postgres'  # Replace with your database name
 user = 'postgres'  # Replace with your PostgreSQL username
-password = '06896#Qz1'  # Replace with your PostgreSQL password
+password = '*****'  # Replace with your PostgreSQL password
 
     
 
