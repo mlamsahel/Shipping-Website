@@ -7,7 +7,7 @@
 - pip install Flask-MySQL
 
 ## Database Info
-- username : root
+- username : user
 - password : pass
 
 ## Authors
