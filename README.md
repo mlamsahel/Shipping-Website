@@ -8,7 +8,7 @@
 
 ## Database Info
 - username : user
-- password : pass
+- password : password
 
 ## Authors
 - Donnovan Stone
